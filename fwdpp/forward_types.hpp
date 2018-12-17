@@ -99,13 +99,6 @@ namespace fwdpp
       are not used elsewhere in the library, but they may
       be in the future, or this may disappear in future library releases.
 
-      \note The typical use of this class is simply to define your mutation
-      type (see @ref md_md_policies)
-      and then use a typedef to define your gamete type in the simulations:
-      \code
-      using gamete_t = fwdpp::gamete_base<mutation_type>
-      \endcode
-      See @ref md_md_policies for examples of this.
       \ingroup basicTypes
     */
     template <typename TAG = tags::standard_gamete> struct gamete_base
