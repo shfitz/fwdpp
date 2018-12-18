@@ -23,11 +23,24 @@ Both types inherit from a common base class, described in the next section.
 The population base class
 ==========================================
 
+.. code-block:: cpp
+
+    #include <fwdpp/poptypes/popbase.hpp>
+
+Although it is possible to define concrete instantiations of this template and allocate objects,
+they have little use outside of simulations of haploids, where representing a gamete is sufficient to relresent an
+entire genome (ignoring obviously fun things like plasmids, etc.).  The base class is shown here because its data
+members are accesible to derived types, and are make up the public API of those types.
+
 .. doxygenclass:: fwdpp::poptypes::popbase
    :members:
 
 A single-locus population
 ==========================================
+
+.. code-block:: cpp
+
+    #include <fwdpp/slocuspop.hpp>
 
 Simulations of single regions will typically rely on this following typedef:
 
@@ -51,11 +64,19 @@ the various containers are all in terms of standard library templates.
 
 The preceding declaration is a template alias for the full class:
 
+.. code-block:: cpp
+
+    #include <fwdpp/poptypes/slocuspop.hpp>
+
 .. doxygenclass:: fwdpp::poptypes::slocuspop
    :members:
 
 A multi-locus population
 ==========================================
+
+.. code-block:: cpp
+
+    #include <fwdpp/mlocuspop.hpp>
 
 Simulations of single regions will typically rely on this following typedef:
 
@@ -82,6 +103,10 @@ the various containers are all in terms of standard library templates.
     The primary difference to :typedef:`fwdpp::slocuspop` is that a diploid is a vector of pairs of keys to gametes.
 
 The preceding declaration is a template alias for the full class:
+
+.. code-block:: cpp
+
+    #include <fwdpp/poptypes/mlocuspop.hpp>
 
 .. doxygenclass:: fwdpp::poptypes::mlocuspop
    :members:
