@@ -14,6 +14,7 @@ Welcome to fwdpp's documentation!
    types
    popgenmut
    diploids
+   populations
    rng
 
    recycling
