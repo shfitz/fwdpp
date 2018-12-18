@@ -13,6 +13,7 @@ Welcome to fwdpp's documentation!
    intro
    types
    popgenmut
+   diploids
    rng
 
 Indices and tables
