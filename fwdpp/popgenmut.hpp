@@ -40,8 +40,8 @@ namespace fwdpp
           \param __g Generation when mutation arose
           \param x Value to assign to mutation_base::xtra
         */
-        popgenmut(const double &__pos, const double &__s, const double &__h,
-                  const unsigned &__g, const std::uint16_t x = 0) noexcept
+        popgenmut(double __pos, double __s, double __h, unsigned __g,
+                  std::uint16_t x) noexcept
             : mutation_base(__pos, (__s == 0.) ? true : false, x), g(__g),
               s(__s), h(__h)
         {
@@ -71,13 +71,14 @@ namespace fwdpp
         }
     };
 
-    template < typename mcont_t, typename lookup_table_t,
+    template <typename mcont_t, typename lookup_table_t,
               typename position_function, typename effect_size_function,
               typename dominance_function>
     std::size_t
-    infsites_popgenmut(flagged_mutation_queue &recycling_bin, mcont_t &mutations,
-                       const gsl_rng *r, lookup_table_t &lookup,
-                       const uint_t &generation, const double pselected,
+    infsites_popgenmut(flagged_mutation_queue &recycling_bin,
+                       mcont_t &mutations, const gsl_rng *r,
+                       lookup_table_t &lookup, const uint_t &generation,
+                       const double pselected,
                        const position_function &posmaker,
                        const effect_size_function &esize_maker,
                        const dominance_function &hmaker,

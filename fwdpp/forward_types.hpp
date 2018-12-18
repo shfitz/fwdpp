@@ -42,8 +42,9 @@ namespace fwdpp
         std::uint16_t xtra;
         /// Is the mutation neutral or not?
         bool neutral;
-        mutation_base(const double &position, const bool &isneutral = true,
-                      const std::uint16_t x = 0) noexcept
+        mutation_base(double position, bool isneutral,
+                      std::uint16_t x) noexcept
+            /// Constructor
             : pos(position), xtra(x), neutral(isneutral)
         {
         }
@@ -57,6 +58,7 @@ namespace fwdpp
 
         inline bool
         is_equal(const mutation_base &rhs) const
+        /// Convenience function to help writing operator== in derived classes
         {
             return this->pos == rhs.pos && this->xtra == rhs.xtra
                    && this->neutral == rhs.neutral;
@@ -74,14 +76,17 @@ namespace fwdpp
         double s;
         /// dominance coefficient
         double h;
-        mutation(const double &position, const double &sel_coeff,
-                 const double &dominance = 0.5) noexcept
-            : mutation_base(position, (sel_coeff == 0)), s(sel_coeff),
+        /// Constructor
+        mutation(double position, double sel_coeff,
+                 double dominance = 0.5) noexcept
+            /// Constructor
+            : mutation_base(position, (sel_coeff == 0), 0), s(sel_coeff),
               h(dominance)
         {
         }
         bool
         operator==(const mutation &rhs) const
+        /// Comparison operator
         {
             return std::tie(this->s, this->h) == std::tie(rhs.s, rhs.h)
                    && is_equal(rhs);
@@ -123,6 +128,8 @@ namespace fwdpp
         /*! @brief Constructor
           \param icount The number of occurrences of this gamete in the
           population
+
+          \note Constructor is marked "explicit"
         */
         explicit gamete_base(const uint_t &icount) noexcept
             : n(icount), mutations(mutation_container()),
@@ -187,5 +194,5 @@ namespace fwdpp
 
     /// Default gamete type
     using gamete = gamete_base<tags::standard_gamete>;
-}
+} // namespace fwdpp
 #endif /* _FORWARD_TYPES_HPP_ */
