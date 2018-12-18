@@ -28,23 +28,30 @@ namespace fwdpp
             T value_;
 
           public:
-            explicit named_type(const T& value) : value_(value) {}
+            explicit named_type(const T& value)
+                /// Constructor (explicit)
+                : value_(value)
+            {
+            }
             template <typename T_>
             explicit named_type(
                 T_&& value,
                 typename std::enable_if<!std::is_reference<T_>::value>::value)
+            /// Constructor for non-reference types.(explicit)
                 : value_(std::move(value))
             {
             }
 
             T&
             get()
+            /// Non-const member access
             {
                 return value_;
             }
 
             const T&
             get() const
+            /// Const member access
             {
                 return value_;
             }
