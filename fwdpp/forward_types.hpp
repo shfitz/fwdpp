@@ -27,8 +27,6 @@ namespace fwdpp
       coefficients,
       counts in different sexes, etc.
       \ingroup basicTypes
-      \note See @ref TutMut in @ref md_md_policies for more detail on how to
-      extend this type
     */
     struct mutation_base
     {

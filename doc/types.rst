@@ -44,6 +44,12 @@ Gametes
 A gamete type represents some section of a genome.  Essentially, it is a holder of "keys" to mutations, where a key is
 :cpp:type:`fwdpp::uint_t`.
 
+The keys things to realize about a gamete are:
+
+1. They track how many times they exist via :member:`fwdpp::gamete_base::n`
+2. Keys to *neutral* variants are stored in :member:`fwdpp::gamete_base::mutations`
+3. Keys to *selected* variants are stored in :member:`fwdpp::gamete_base::smutations`
+
 A gamete is represented by the following struct:
 
 .. doxygenstruct:: fwdpp::gamete_base
