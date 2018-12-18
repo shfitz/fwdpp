@@ -184,6 +184,7 @@ namespace fwdpp
             explicit popbase(
                 gametes_input &&g, mutations_input &&m,
                 typename gamete_t::mutation_container::size_type reserve_size)
+                /// Constructor for pre-defined gametes and mutations
                 : mutations(std::forward<mutations_input>(m)), mcounts{},
                   mcounts_from_preserved_nodes{},
                   gametes(std::forward<gametes_input>(g)), neutral{},
