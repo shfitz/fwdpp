@@ -1,4 +1,4 @@
-A common mutation type
+Common mutation types
 ----------------------------------
 
 .. code-block:: cpp
@@ -12,3 +12,7 @@ and it tracks the generation when it arose (:member:`fwdpp::popgenmut::g`).
    :project: fwdpp
    :members:
 
+fwdpp also defines the following type, which is simpler, but less useful, as it doesn't track its origin time:
+
+.. doxygenstruct:: fwdpp::mutation
+   :members:
