@@ -21,6 +21,8 @@ Welcome to fwdpp's documentation!
    mutations
    gvalues
 
+   simparams
+
    strongtypes
 
 .. toctree::
