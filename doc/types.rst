@@ -17,6 +17,7 @@ Unsigned integer type
 A lot of fwdpp relies on an unsigned, 32-bit integer, which you will see a lot in function prototypes, etc.:
 
 .. doxygentypedef:: fwdpp::uint_t
+   :project: fwdpp
 
 Mutations
 =========================
@@ -42,7 +43,7 @@ Gametes
 =========================
 
 A gamete type represents some section of a genome.  Essentially, it is a holder of "keys" to mutations, where a key is
-:cpp:type:`fwdpp::uint_t`.
+:type:`fwdpp::uint_t`.
 
 The keys things to realize about a gamete are:
 
