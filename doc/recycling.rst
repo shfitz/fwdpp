@@ -8,4 +8,5 @@ locations of such variants into FIFO queues.  The types of these queues are:
 
 .. doxygentypedef:: fwdpp::flagged_gamete_queue
 
-These two types are examples of **strong types**.  Fundamentally, both are `std::queue<std::size_t>`.
+These two types are examples of **strong types**.  Fundamentally, both are `std::queue<std::size_t>`.  See the details
+of :class:`fwdpp::strong_types::named_type` for details.
