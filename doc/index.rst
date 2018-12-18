@@ -23,6 +23,8 @@ Welcome to fwdpp's documentation!
 
    simparams
 
+   tstypes
+
    strongtypes
 
 .. toctree::
