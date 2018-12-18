@@ -16,7 +16,10 @@ Welcome to fwdpp's documentation!
    diploids
    rng
 
+   recycling
    mutations
+
+   strongtypes
 
 .. toctree::
    :maxdepth: 2
