@@ -49,20 +49,30 @@ namespace fwdpp
     ///
     /// \version 0.7.4 Added to library
     {
+        /// Calculates the genetic value
         const genetic_value gvalue;
+        /// Generates a vector of keys to new variants
         const mutation_function generate_mutations;
+        /// Generates a vector of recombination breakpoints
         const recombination_function generate_breakpoints;
+        /// Genrates the number of crossover events between loci
         const interlocus_recombination_function interlocus_recombination;
+        /// Determins the rule by which parental gametes "flip"
         const parent_gamete_swapping_function gamete_swapper;
+        /// Queue for mutation recycling
         flagged_mutation_queue mutation_recycling_bin;
+        /// Queue for gamete recycling
         flagged_gamete_queue gamete_recycling_bin;
+        /// Intermediate container for building new gametes
         std::vector<uint_t> neutral;
+        /// Intermediate container for building new gametes
         std::vector<uint_t> selected;
 
         template <typename gv, typename mut, typename rec, typename swapper>
         genetic_parameters(gv&& gvalue_param, mut&& generate_mutations_param,
                            rec&& generate_breakpoints_param,
                            swapper&& gamete_swapper_param)
+            /// Constructor
             : gvalue{ std::forward<gv>(gvalue_param) },
               generate_mutations{ std::forward<mut>(
                   generate_mutations_param) },
@@ -82,6 +92,7 @@ namespace fwdpp
                            rec&& generate_breakpoints_param,
                            irec&& interlocus_recombination_param,
                            swapper&& gamete_swapper_param)
+            /// Constructor
             : gvalue{ std::forward<gv>(gvalue_param) },
               generate_mutations{ std::forward<mut>(
                   generate_mutations_param) },
