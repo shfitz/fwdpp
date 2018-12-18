@@ -16,6 +16,8 @@ Welcome to fwdpp's documentation!
    diploids
    rng
 
+   mutations
+
 .. toctree::
    :maxdepth: 2
    :caption: Example programs:
