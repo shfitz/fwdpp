@@ -55,7 +55,8 @@ multilocus_fixture_deterministic::mutate_parent()
     for (std::size_t i = 0; i < nloci; ++i)
         {
             // Mutation exactly on left edge of locus
-            auto k = fwdpp::add_mutation(pop, i, indlist, clist, i, 0, 0, 0);
+            auto k
+                = fwdpp::add_mutation(pop, i, indlist, clist, i, 0, 0, 0, 1);
             tables.mutation_table.emplace_back(
                 fwdpp::ts::mutation_record{ 0, k });
         }
@@ -69,10 +70,12 @@ multilocus_fixture_deterministic::mutate_parent2()
     for (std::size_t i = 0; i < nloci; ++i)
         {
             // Mutation exactly on left edge of locus
-            auto k = fwdpp::add_mutation(pop, i, indlist, clist, i, 0, 0, 0);
+            auto k
+                = fwdpp::add_mutation(pop, i, indlist, clist, i, 0, 0, 0, 1);
             tables.mutation_table.emplace_back(
                 fwdpp::ts::mutation_record{ 0, k });
-            k = fwdpp::add_mutation(pop, i, indlist, clist, i + 0.51, 0, 0, 0);
+            k = fwdpp::add_mutation(pop, i, indlist, clist, i + 0.51, 0, 0, 0,
+                                    1);
             tables.mutation_table.emplace_back(
                 fwdpp::ts::mutation_record{ 0, k });
         }
@@ -90,20 +93,23 @@ multilocus_fixture_deterministic::mutate_both_parents()
             std::vector<std::size_t> indlist(1, 0);
             parent_node = 0;
             auto k = fwdpp::add_mutation(pop, i, indlist, clist, i + 0.1, 0, 0,
-                                         0);
+                                         0, 1);
             tables.mutation_table.emplace_back(
                 fwdpp::ts::mutation_record{ parent_node, k });
-            k = fwdpp::add_mutation(pop, i, indlist, clist, i + 0.41, 0, 0, 0);
+            k = fwdpp::add_mutation(pop, i, indlist, clist, i + 0.41, 0, 0, 0,
+                                    1);
             tables.mutation_table.emplace_back(
                 fwdpp::ts::mutation_record{ parent_node, k });
             // Add mutations to second parental gamete,
             // which corresponds to node 1
             clist = { 1 };
             parent_node = 1;
-            k = fwdpp::add_mutation(pop, i, indlist, clist, i + 0.21, 0, 0, 0);
+            k = fwdpp::add_mutation(pop, i, indlist, clist, i + 0.21, 0, 0, 0,
+                                    1);
             tables.mutation_table.emplace_back(
                 fwdpp::ts::mutation_record{ parent_node, k });
-            k = fwdpp::add_mutation(pop, i, indlist, clist, i + 0.61, 0, 0, 0);
+            k = fwdpp::add_mutation(pop, i, indlist, clist, i + 0.61, 0, 0, 0,
+                                    1);
             tables.mutation_table.emplace_back(
                 fwdpp::ts::mutation_record{ parent_node, k });
         }
@@ -114,19 +120,22 @@ multilocus_fixture_deterministic::mutate_both_parents()
             std::vector<short> clist(1, 0);
             std::vector<std::size_t> indlist(1, 1);
             auto k = fwdpp::add_mutation(pop, i, indlist, clist, i + 0.05, 0,
-                                         0, 0);
+                                         0, 0, 1);
             tables.mutation_table.emplace_back(
                 fwdpp::ts::mutation_record{ parent_node, k });
-            k = fwdpp::add_mutation(pop, i, indlist, clist, i + 0.45, 0, 0, 0);
+            k = fwdpp::add_mutation(pop, i, indlist, clist, i + 0.45, 0, 0, 0,
+                                    1);
             tables.mutation_table.emplace_back(
                 fwdpp::ts::mutation_record{ parent_node, k });
             // add mutations to the second gamete of this parent
             clist = { 1 };
             parent_node = 3;
-            k = fwdpp::add_mutation(pop, i, indlist, clist, i + 0.15, 0, 0, 0);
+            k = fwdpp::add_mutation(pop, i, indlist, clist, i + 0.15, 0, 0, 0,
+                                    1);
             tables.mutation_table.emplace_back(
                 fwdpp::ts::mutation_record{ parent_node, k });
-            k = fwdpp::add_mutation(pop, i, indlist, clist, i + 0.75, 0, 0, 0);
+            k = fwdpp::add_mutation(pop, i, indlist, clist, i + 0.75, 0, 0, 0,
+                                    1);
             tables.mutation_table.emplace_back(
                 fwdpp::ts::mutation_record{ parent_node, k });
         }

@@ -148,7 +148,7 @@ struct slocuspop_objects
             {
                 // position = i, effect size = i
                 // meaning muts 1 and 2 not neutral
-                mutations.emplace_back(i, i, 1, 0);
+                mutations.emplace_back(i, i, 1, 0, 0);
             }
 
         // Add two gametes
@@ -183,7 +183,7 @@ struct mlocuspop_objects
             {
                 // position = i, effect size = i
                 // meaning muts 1 and 2 not neutral
-                mutations.emplace_back(i, i, 1, 0);
+                mutations.emplace_back(i, i, 1, 0, 0);
             }
 
         // Add two gametes

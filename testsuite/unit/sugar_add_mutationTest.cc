@@ -33,7 +33,7 @@ BOOST_AUTO_TEST_CASE(test_add_mutation)
                         */
                         { 0, 1, 0, 2, 2, 0 },
                         // Parameters to pass on to create a new mutation
-                        0.1, -0.1, 1, 0);
+                        0.1, -0.1, 1, 0, 0);
     BOOST_REQUIRE_NO_THROW(
         fwdpp::debug::validate_sum_gamete_counts(pop.gametes, 2000));
     BOOST_REQUIRE_EQUAL(pop.gametes.size(), 2);
@@ -67,7 +67,7 @@ BOOST_AUTO_TEST_CASE(test_add_mutation)
 
 BOOST_AUTO_TEST_CASE(test_add_mutation_from_object)
 {
-    fwdpp::popgenmut m(0.1, -0.1, 1, 0);
+    fwdpp::popgenmut m(0.1, -0.1, 1, 0, 0);
     fwdpp::add_mutation(pop,
                         // individuals where we want to place the mutation
                         { 0, 1, 3, 5, 7, 9 },
@@ -132,11 +132,11 @@ BOOST_AUTO_TEST_CASE(test_add_mutations_slocuspop)
 */
 {
     // Add three new mutations to this population object
-    pop.mutations.emplace_back(0.1, 0.0, 0.0, 0); // Neutral at position 0.1
+    pop.mutations.emplace_back(0.1, 0.0, 0.0, 0, 1); // Neutral at position 0.1
     pop.mutations.emplace_back(
-        0.2, -0.1, 0.0, 0); // Selected, deleterious, recessive at position 0.2
+        0.2, -0.1, 0.0, 0, 1); // Selected, deleterious, recessive at position 0.2
     pop.mutations.emplace_back(
-        0.3, 0.1, 1.0, 0);    // Selected, beneficial, h=1 at position 0.3,
+        0.3, 0.1, 1.0, 0, 1);    // Selected, beneficial, h=1 at position 0.3,
     pop.mcounts.resize(3, 0); // got make sure mcounts matches up in size.  We
                               // init to zero b/c add_mutations will do the
                               // work for us.
@@ -209,7 +209,7 @@ BOOST_AUTO_TEST_CASE(test_add_mutation_mlocuspop)
                         */
                         { 0, 1, 0, 2, 2, 0 },
                         // params for new mutation
-                        0.1, -0.1, 1, 0);
+                        0.1, -0.1, 1, 0, 1);
     BOOST_REQUIRE_NO_THROW(
         fwdpp::debug::validate_sum_gamete_counts(pop.gametes, 8000));
     BOOST_REQUIRE_EQUAL(pop.gametes.size(), 2);

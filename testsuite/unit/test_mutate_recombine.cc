@@ -13,7 +13,7 @@ BOOST_FIXTURE_TEST_CASE(test_boundary, slocuspop_objects)
     poptype pop(diploids, gametes, mutations);
 
     // We are going to manually add a neutral mutation at position 1.5
-    pop.mutations.emplace_back(1.5, 0.0, 1.0, 1);
+    pop.mutations.emplace_back(1.5, 0.0, 1.0, 1, 0);
     pop.mcounts.push_back(1); // mock the mutation count
     // We add the mutation to the second gamete of the pop
     fwdpp::fwdpp_internal::insert_new_mutation(
