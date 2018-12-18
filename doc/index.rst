@@ -19,6 +19,7 @@ Welcome to fwdpp's documentation!
 
    recycling
    mutations
+   gvalues
 
    strongtypes
 
