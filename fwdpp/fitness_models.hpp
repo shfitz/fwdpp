@@ -419,8 +419,9 @@ namespace fwdpp
     /// to the constructor.
     ///
     /// \ingroup fitness
-    struct multiplicative_diploid
+    class multiplicative_diploid
     {
+      private:
         std::function<double(double)>
         assign_f(trait &)
         {
@@ -431,6 +432,8 @@ namespace fwdpp
         {
             return [](const double d) { return std::max(0.0, d); };
         }
+
+      public:
         const double scaling;
         const bool gvalue_is_trait;
         const bool gvalue_is_fitness;
@@ -530,8 +533,9 @@ namespace fwdpp
     /// to the constructor.
     ///
     /// \ingroup fitness
-    struct additive_diploid
+    class additive_diploid
     {
+      private:
         /// Specifies final mapping of genetic value
         std::function<double(double)> assign_f(trait)
         {
@@ -541,6 +545,8 @@ namespace fwdpp
         {
             return [](const double d) { return std::max(0.0, 1.0 + d); };
         }
+
+      public:
         const double scaling;
         const bool gvalue_is_trait;
         const bool gvalue_is_fitness;
