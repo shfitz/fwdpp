@@ -20,11 +20,18 @@ namespace fwdpp
         ///
         ///  \version 0.7.0 Added to fwdpp
         {
-            double left, right;
-            TS_NODE_INT parent, child;
+            /// Left edge of interval, inclusive
+            double left;
+            /// Right edge of interval, exclusive
+            double right;
+            /// Parent of interval
+            TS_NODE_INT parent;
+            /// Child of interval
+            TS_NODE_IN Tchild;
         };
         inline bool
         operator==(const edge& a, const edge& b)
+        /// Comparison operator
         {
             return std::tie(a.parent, a.child, a.left, a.right)
                    == std::tie(b.parent, b.child, b.left, b.right);
