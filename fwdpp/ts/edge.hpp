@@ -27,7 +27,7 @@ namespace fwdpp
             /// Parent of interval
             TS_NODE_INT parent;
             /// Child of interval
-            TS_NODE_IN Tchild;
+            TS_NODE_INT child;
         };
         inline bool
         operator==(const edge& a, const edge& b)
